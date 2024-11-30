@@ -28,7 +28,13 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setGroupedTodos(groupTodos(todos));
+    const newGroupedTodos = groupTodos(todos);
+    setGroupedTodos(newGroupedTodos);
+
+    const { group, date } = selectedGroup;
+    if (date !== null && newGroupedTodos[group][date] === undefined) {
+      setSelectedGroup({ group, date: null });
+    }
   }, [todos]);
 
   const handleSelectGroup = (groupIdentifiers: SelectedGroupType) => {

@@ -23,7 +23,7 @@ const MainContent = ({
   const { openModal } = useModal();
   const { group, date } = selectedGroup;
 
-  let todos;
+  let todos = [];
   if (date === null) {
     todos = Object.values(groupedTodos[group]).flat();
   } else {
