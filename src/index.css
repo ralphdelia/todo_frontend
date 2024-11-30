@@ -1,0 +1,124 @@
+.container {
+  padding: 1rem;
+}
+mark {
+  border-radius: var(--pico-border-radius);
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 320px;
+  padding: 1rem;
+  padding-left: 0rem;
+  margin-right: 20px;
+  overflow-y: auto;
+}
+
+aside:first-child {
+  position: relative;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: var(--pico-border-radius);
+}
+
+.todo:hover {
+  cursor: pointer;
+  color: var(--pico-background-color);
+  background: var(--pico-primary-hover-background);
+}
+
+.todo:hover > *:not(mark) {
+  color: var(--pico-background-color);
+}
+
+/* Rules for sizing the icon. */
+.icons {
+  display: inline;
+  padding: 8px;
+  vertical-align: middle;
+  border-radius: var(--pico-border-radius);
+}
+
+.icons:hover {
+  cursor: pointer;
+  color: var(--pico-background-color);
+  background: var(--pico-primary-hover-background);
+}
+
+.material-icons {
+  vertical-align: middle;
+}
+
+.material-icons:not(.icons) {
+  padding-right: 10px;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: var(--pico-primary);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: var(--pico-primary);
+}
+
+#theme-toggle-icon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.sun-core {
+  fill: var(--pico-primary);
+}
+
+.sun-rays {
+  stroke: var(--pico-primary);
+  stroke-width: 1.5;
+}
+
+.moon {
+  fill: var(--pico-muted-color);
+  transition: opacity 0.3s ease;
+}
+
+[data-theme="dark"] #theme-toggle-icon .sun-core,
+[data-theme="dark"] #theme-toggle-icon .sun-rays {
+  opacity: 0;
+}
+
+[data-theme="dark"] #theme-toggle-icon .moon {
+  opacity: 1;
+}
+
+[data-theme="light"] #theme-toggle-icon .moon {
+  opacity: 0;
+}
