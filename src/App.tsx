@@ -28,9 +28,12 @@ function App() {
   }, []);
 
   useEffect(() => {
+    // format todos
     const newGroupedTodos = groupTodos(todos);
     setGroupedTodos(newGroupedTodos);
 
+    // Ensures that the selected group and date remain valid by deselecting any
+    // date that no longer has associated todos after the todos list is updated.
     const { group, date } = selectedGroup;
     if (date !== null && newGroupedTodos[group][date] === undefined) {
       setSelectedGroup({ group, date: null });
